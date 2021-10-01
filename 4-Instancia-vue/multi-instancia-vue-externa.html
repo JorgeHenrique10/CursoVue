@@ -1,0 +1,35 @@
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<script src="https://unpkg.com/vue"></script>
+
+<div id="app">
+    <p @click='adicionar'>{{title1}}</p>
+</div>
+<div id="app2">
+    <p @click='adicionar'>{{title2}}</p>
+</div>
+
+<script>
+    const vm1 = new Vue({
+        el: '#app',
+        data: {
+            title1: 'Teste1'
+        },
+        methods: {
+            adicionar() {
+                this.title1 += '!!!';
+            }
+        }
+    })
+    const vm2 = new Vue({
+        el: '#app2',
+        data: {
+            title2: 'Teste2'
+        },
+        methods: {
+            adicionar() {
+                this.title2 += '!!!';
+                vm1.title1 += '😇'
+            }
+        }
+    })
+</script>

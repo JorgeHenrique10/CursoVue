@@ -1,0 +1,22 @@
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<script src="https://unpkg.com/vue"></script>
+
+<div id="app">
+    <ul>
+        <li v-for="cor in cores" :key='cor'> {{cor}}</li>
+    </ul>
+    <button @click='cores.push("Branca")'>Adicionar</button>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            cores: ["verde", "vermelho", "amarelo", "azul", "rosa"],
+            pessoas: [
+                { nome: 'Ana', idade: 26, peso: 59 },
+                { nome: 'Guilherme', idade: 18, peso: 62 },
+            ]
+        }
+    })
+</script>
